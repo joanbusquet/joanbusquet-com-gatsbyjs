@@ -1,0 +1,28 @@
+/* AVENIR NEXT FONT - REGULAR*/
+@font-face {
+  font-family: "Avenir Next";
+  src: url("../assets/fonts/AvenirNext/AvenirNext-Regular/AvenirNext-Regular.eot"); /* IE9 Compat Modes */
+  src: url("../assets/fonts/AvenirNext/AvenirNext-Regular/AvenirNext-Regular.eot?#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("../assets/fonts/AvenirNext/AvenirNext-Regular/AvenirNext-Regular.otf")
+      format("opentype"),
+    /* Open Type Font */
+      url("../assets/fonts/AvenirNext/AvenirNext-Regular/AvenirNext-Regular.svg")
+      format("svg"),
+    /* Legacy iOS */
+      url("../assets/fonts/AvenirNext/AvenirNext-Regular/AvenirNext-Regular.ttf")
+      format("truetype"),
+    /* Safari, Android, iOS */
+      url("../assets/fonts/AvenirNext/AvenirNext-Regular/AvenirNext-Regular.woff")
+      format("woff"),
+    /* Modern Browsers */
+      url("../assets/fonts/AvenirNext/AvenirNext-Regular/AvenirNext-Regular.woff2")
+      format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "Avenir Next", Arial, Helvetica, sans-serif;
+}

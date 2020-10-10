@@ -1,0 +1,22 @@
+.logo {
+  margin-top: 2vw;
+}
+
+.nav {
+  display: flex;
+  margin-top: 2vw;
+  width: 80%;
+}
+.nav-item {
+  color: white !important;
+  flex: 1 1 auto;
+  padding: 0;
+}
+.nav-item:last-child {
+  margin-top: -0.75vw;
+}
+
+.button {
+  padding: 10px 24px 10px;
+  border-radius: 25px;
+}
