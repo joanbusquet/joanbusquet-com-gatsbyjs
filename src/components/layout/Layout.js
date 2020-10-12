@@ -1,6 +1,11 @@
 import React from "react"
+
+import "bootstrap/dist/css/bootstrap.min.css"
+import "../../styles/global.css"
+
 import Header from "./header"
 import Footer from "./footer"
+import { Container } from "react-bootstrap"
 
 const Layout = ({ children, hero }) => {
   console.log(hero)
@@ -8,7 +13,9 @@ const Layout = ({ children, hero }) => {
   return (
     <>
       <Header hero={hero} />
-      <main>{children}</main>
+      <main>
+        <Container>{children}</Container>
+      </main>
       <Footer />
     </>
   )
