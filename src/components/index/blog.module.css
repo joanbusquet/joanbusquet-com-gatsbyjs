@@ -1,0 +1,42 @@
+.blog-column {
+  margin: 1rem;
+  padding: 0;
+
+  transition: all 0.3s linear;
+
+  overflow: hidden;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 5px 14px 2px;
+}
+.blog-column:hover {
+  transform: scale(1.02);
+  box-shadow: rgba(0, 0, 0, 0.07) 0px 15px 20px 10px;
+}
+.blog-column:first-child {
+  margin-left: 0;
+}
+.blog-column:last-child {
+  margin-right: 0;
+}
+
+.blog-image {
+  margin-top: 0;
+}
+
+.blog-title {
+  font-size: 1.25rem;
+  padding: 1rem;
+}
+
+.blog-excerpt {
+  padding: 0 1rem;
+}
+
+.blog-tags {
+  padding: 1rem;
+  padding-top: 0;
+}
+
+.blog-tags button {
+  margin-right: 0.25rem;
+}

@@ -54,3 +54,13 @@ h3,
 h4 {
   font-weight: 600;
 }
+
+/* PAGES STYLING */
+.page-block-container {
+  margin-top: 2rem;
+}
+
+.page-block-title,
+.page-block-subtitle {
+  text-align: center;
+}
