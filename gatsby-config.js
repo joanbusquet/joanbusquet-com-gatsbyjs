@@ -1,5 +1,10 @@
 const path = require(`path`)
 
+//VARIABLES ENTORNO
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     title: `Joan Busquet`,
@@ -38,6 +43,14 @@ module.exports = {
         rule: {
           include: /assets/,
         },
+      },
+    },
+    {
+      resolve: `gatsby-source-contentful`,
+      options: {
+        spaceId: `im37fw8n29tj`,
+        // Learn about environment variables: https://gatsby.dev/env-vars
+        accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
   ],
