@@ -53,5 +53,16 @@ module.exports = {
         accessToken: process.env.CONTENTFUL_ACCESS_TOKEN,
       },
     },
+    {
+      resolve: `gatsby-remark-embedder`,
+      options: {
+        customTransformers: [
+          // Your custom transformers
+        ],
+        services: {
+          // The service-specific options by the name of the service
+        },
+      },
+    },
   ],
 }

@@ -36,7 +36,7 @@ const Blog = () => {
       <Row>
         {posts.map(post => {
           return (
-            <Col className={styles.blogColumn} key={post.id}>
+            <Col sm={4} className={styles.blogColumn} key={post.id}>
               <Image fluid={post.image.fluid} alt={post.title} />
               <h3 className={styles.blogTitle}>{post.title}</h3>
               <p className={styles.blogExcerpt}>{post.excerpt.excerpt}</p>

@@ -18,6 +18,7 @@ export default function Home({ data }) {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
           elementum ornare massa non rutrum.
         </p>
+
         <Videos />
       </Container>
       {/* PODCAST BLOCK */}

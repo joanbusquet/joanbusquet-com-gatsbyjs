@@ -25,6 +25,7 @@
     "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sharp": "^2.6.39",
     "gatsby-plugin-sitemap": "^2.4.15",
+    "gatsby-remark-embedder": "^3.0.0",
     "gatsby-source-contentful": "^2.3.52",
     "gatsby-source-filesystem": "^2.3.33",
     "gatsby-transformer-sharp": "^2.5.17",

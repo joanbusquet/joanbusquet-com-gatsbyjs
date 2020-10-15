@@ -1,74 +1,47 @@
 import React from "react"
+import { graphql, useStaticQuery } from "gatsby"
 import styles from "./videos.module.css"
 import { Row, Col } from "react-bootstrap"
 
 const Videos = () => {
+  const data = useStaticQuery(graphql`
+    {
+      allContentfulVideo {
+        nodes {
+          title
+          description {
+            description
+          }
+          link
+          uploaded
+        }
+      }
+    }
+  `)
+  const {
+    allContentfulVideo: { nodes: videos },
+  } = data
+  console.log(videos)
   return (
     <>
       <Row>
-        <Col className={styles.videoColumn}>
-          <img
-            className={styles.videoImage}
-            alt="aa"
-            src="https://images.ctfassets.net/fo9twyrwpveg/5dp65YLLMvi5mbXuz41cQV/8bb6ac10ea598d9e3be615cd55cd083a/B_O_Case_study_landing_page_header_1600x625px.jpg?w=486&fm=jpg&q=70"
-          />
-          <h3 className={styles.videoTitle}>
-            Lorem ipsum dolor sit amet lorem ipsum el video es largo
-          </h3>
-        </Col>
-        <Col className={styles.videoColumn}>
-          <img
-            className={styles.videoImage}
-            alt="bb"
-            src="https://images.ctfassets.net/fo9twyrwpveg/5dp65YLLMvi5mbXuz41cQV/8bb6ac10ea598d9e3be615cd55cd083a/B_O_Case_study_landing_page_header_1600x625px.jpg?w=486&fm=jpg&q=70"
-          />
-          <h3 className={styles.videoTitle}>
-            Lorem ipsum dolor sit amet lorem ipsum el video es largo
-          </h3>
-        </Col>
-        <Col className={styles.videoColumn}>
-          <img
-            className={styles.videoImage}
-            alt="cc"
-            src="https://images.ctfassets.net/fo9twyrwpveg/5dp65YLLMvi5mbXuz41cQV/8bb6ac10ea598d9e3be615cd55cd083a/B_O_Case_study_landing_page_header_1600x625px.jpg?w=486&fm=jpg&q=70"
-          />
-          <h3 className={styles.videoTitle}>
-            Lorem ipsum dolor sit amet lorem ipsum el video es largo
-          </h3>
-        </Col>
-      </Row>
-      <Row>
-        <Col className={styles.videoColumn}>
-          <img
-            className={styles.videoImage}
-            alt="bb"
-            src="https://images.ctfassets.net/fo9twyrwpveg/5dp65YLLMvi5mbXuz41cQV/8bb6ac10ea598d9e3be615cd55cd083a/B_O_Case_study_landing_page_header_1600x625px.jpg?w=486&fm=jpg&q=70"
-          />
-          <h3 className={styles.videoTitle}>
-            Lorem ipsum dolor sit amet lorem ipsum el video es largo
-          </h3>
-        </Col>
-        <Col className={styles.videoColumn}>
-          <img
-            className={styles.videoImage}
-            alt="cc"
-            src="https://images.ctfassets.net/fo9twyrwpveg/5dp65YLLMvi5mbXuz41cQV/8bb6ac10ea598d9e3be615cd55cd083a/B_O_Case_study_landing_page_header_1600x625px.jpg?w=486&fm=jpg&q=70"
-          />
-          <h3 className={styles.videoTitle}>
-            Lorem ipsum dolor sit amet lorem ipsum el video es largo
-          </h3>
-        </Col>
-
-        <Col className={styles.videoColumn}>
-          <img
-            className={styles.videoImage}
-            alt="aa"
-            src="https://images.ctfassets.net/fo9twyrwpveg/5dp65YLLMvi5mbXuz41cQV/8bb6ac10ea598d9e3be615cd55cd083a/B_O_Case_study_landing_page_header_1600x625px.jpg?w=486&fm=jpg&q=70"
-          />
-          <h3 className={styles.videoTitle}>
-            Lorem ipsum dolor sit amet lorem ipsum el video es largo
-          </h3>
-        </Col>
+        {videos.map(video => {
+          return (
+            <Col sm={4} className={styles.videoColumn} key={video.id}>
+              <iframe
+                title={video.title}
+                width="100%"
+                height="200"
+                src={`https://www.youtube.com/embed/${video.link}`}
+                frameborder="0"
+                allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen
+              ></iframe>
+              <h3 className={styles.videoTitle}>{video.title}</h3>
+              <p>{video.description.description}</p>
+            </Col>
+          )
+        })}
       </Row>
     </>
   )
