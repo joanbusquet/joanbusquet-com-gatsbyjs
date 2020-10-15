@@ -9,9 +9,6 @@ const Videos = () => {
       allContentfulVideo {
         nodes {
           title
-          description {
-            description
-          }
           link
           uploaded
         }
@@ -38,7 +35,6 @@ const Videos = () => {
                 allowfullscreen
               ></iframe>
               <h3 className={styles.videoTitle}>{video.title}</h3>
-              <p>{video.description.description}</p>
             </Col>
           )
         })}
