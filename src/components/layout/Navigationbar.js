@@ -1,6 +1,6 @@
 import React from "react"
 import { Navbar, Nav, Container, Button } from "react-bootstrap"
-import { graphql, useStaticQuery } from "gatsby"
+import { Link, graphql, useStaticQuery } from "gatsby"
 import Image from "gatsby-image"
 
 import styles from "./navigationbar.module.css"
@@ -22,9 +22,11 @@ const Navigationbar = () => {
   return (
     <Navbar bg="transparent" expand="lg">
       <Container>
-        <Navbar.Brand href="#home">
-          <Image fixed={logo.childImageSharp.fixed} className={styles.logo} />
-        </Navbar.Brand>
+        <Link to="/">
+          <Navbar.Brand>
+            <Image fixed={logo.childImageSharp.fixed} className={styles.logo} />
+          </Navbar.Brand>
+        </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className={`ml-auto ${styles.nav}`}>
