@@ -4,6 +4,7 @@ import "moment/locale/es"
 import { Link, graphql } from "gatsby"
 import Image from "gatsby-image"
 import Layout from "../components/layout/Layout"
+import { Container } from "react-bootstrap"
 
 import styles from "./post-template.module.css"
 //To render rich text from Contentful
@@ -68,26 +69,28 @@ const postTemplate = ({
   }
   return (
     <Layout>
-      {/* TAGS CONTAINER */}
-      <div className={styles.tagsContainer}>
-        {tags.map(tag => {
-          return (
-            <button className={`btn btn-sm ml-1 btn-outline-${tag.color}`}>
-              {tag.name}
-            </button>
-          )
-        })}
-      </div>
+      <Container>
+        {/* TAGS CONTAINER */}
+        <div className={styles.tagsContainer}>
+          {tags.map(tag => {
+            return (
+              <button className={`btn btn-sm ml-1 btn-outline-${tag.color}`}>
+                {tag.name}
+              </button>
+            )
+          })}
+        </div>
 
-      <Image fluid={fluid} alt={title} className={styles.image} />
+        <Image fluid={fluid} alt={title} className={styles.image} />
 
-      <h1 className={styles.title}>{title}</h1>
-      <p className={styles.meta}>
-        {moment(createdAt).locale("es").format("LL")}
-      </p>
-      <article className={styles.relatedPost}>
-        {documentToReactComponents(json, options)}
-      </article>
+        <h1 className={styles.title}>{title}</h1>
+        <p className={styles.meta}>
+          {moment(createdAt).locale("es").format("LL")}
+        </p>
+        <article className={styles.relatedPost}>
+          {documentToReactComponents(json, options)}
+        </article>
+      </Container>
     </Layout>
   )
 }
