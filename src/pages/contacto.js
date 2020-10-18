@@ -16,10 +16,11 @@ const contacto = () => {
           <Col sm={6} className="mx-auto d-block mt-3">
             <Form
               name="contact"
-              data-netlify="true"
-              data-netlify-honeypot="bot-field"
               method="POST"
+              data-netlify="true"
+              onSubmit="submit"
             >
+              <input type="hidden" name="form-name" value="contact" />
               <Form.Group controlId="formBasicEmail">
                 <Form.Label>Nombre completo *</Form.Label>
                 <Form.Control
