@@ -22,31 +22,43 @@ const Navigationbar = () => {
   return (
     <Navbar bg="transparent" expand="lg">
       <Container>
-        <Link to="/">
-          <Navbar.Brand>
+        <Navbar.Brand>
+          <Link to="/">
             <Image fixed={logo.childImageSharp.fixed} className={styles.logo} />
-          </Navbar.Brand>
-        </Link>
+          </Link>
+        </Navbar.Brand>
+
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className={`ml-auto ${styles.nav}`}>
-            <Nav.Link href="#link" className={styles.navItem}>
-              Vídeos
-            </Nav.Link>
-            <Nav.Link href="#link" className={styles.navItem}>
-              Podcast
-            </Nav.Link>
-            <Nav.Link href="#link" className={styles.navItem}>
-              Blog
-            </Nav.Link>
-            <Nav.Link href="#home" className={styles.navItem}>
-              Sobre mi
-            </Nav.Link>
-            <Nav.Link href="#link" className={styles.navItem}>
-              <Button variant="outline-light" className={styles.button}>
-                ¿Hablamos?
-              </Button>
-            </Nav.Link>
+            <Nav className={styles.navItem}>
+              <a
+                target="_blank"
+                href="https://aprendeinternet.com"
+                rel="noreferrer"
+              >
+                Academia
+              </a>
+            </Nav>
+            <Nav className={styles.navItem}>
+              <Link to="/videos">Vídeos</Link>
+            </Nav>
+            {/*<Nav className={styles.navItem}>
+              <Link to="/podcast">Podcast</Link>
+  </Nav>*/}
+            <Nav className={styles.navItem}>
+              <Link to="/blog">Blog</Link>
+            </Nav>
+            <Nav className={styles.navItem}>
+              <Link to="/sobre-mi">Sobre mi</Link>
+            </Nav>
+            <Nav className={styles.navItem}>
+              <Link to="/contacto">
+                <Button variant="outline-light" className={styles.button}>
+                  ¿Hablamos?
+                </Button>
+              </Link>
+            </Nav>
           </Nav>
         </Navbar.Collapse>
       </Container>

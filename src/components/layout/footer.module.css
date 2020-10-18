@@ -1,0 +1,27 @@
+.footer {
+  background: linear-gradient(125deg, rgb(33 74 167) 0%, rgb(153 226 243) 100%);
+  width: 100%;
+  text-align: center;
+  color: white;
+  margin-top: 2rem;
+}
+
+.logo {
+  margin-top: 1.5rem;
+  display: block;
+}
+
+.copyright {
+  display: block;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+.copyright a {
+  color: white;
+}
+.copyright a:hover,
+.copyright a:active {
+  color: white;
+  text-decoration: underline;
+}

@@ -1,12 +1,15 @@
 .video-column {
-  margin: 1rem;
-  padding: 0;
-
   transition: all 0.3s linear;
-
+  flex: 0 0 32.667%;
+  max-width: 32.667%;
+  margin-left: 1%;
   overflow: hidden;
   border-radius: 6px;
   box-shadow: rgba(0, 0, 0, 0.07) 0px 5px 14px 2px;
+  padding: 0;
+}
+.video-column:first-child {
+  margin-left: 0;
 }
 .video-column:hover {
   transform: scale(1.02);

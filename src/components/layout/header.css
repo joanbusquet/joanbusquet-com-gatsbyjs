@@ -5,6 +5,16 @@ header {
   color: white;
 }
 
+header a {
+  color: white;
+}
+
+header a:hover,
+header a:active {
+  color: white;
+  text-decoration: underline;
+}
+
 .inner-header {
   width: 100%;
   margin: 0;
