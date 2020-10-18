@@ -38,7 +38,7 @@ const PostList = () => {
         {posts.map(post => {
           return (
             <Col sm={4} className={styles.postColumn} key={post.id}>
-              <Link to={`blog/${post.slug}`}>
+              <Link to={`post/${post.slug}`}>
                 <Image fluid={post.image.fluid} alt={post.title} />
                 <h3 className={styles.postTitle}>{post.title}</h3>
                 <p className={styles.postExcerpt}>{post.excerpt.excerpt}</p>

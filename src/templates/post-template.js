@@ -36,13 +36,13 @@ const postTemplate = ({
       },
       //Render post inside post Contentful
       "embedded-entry-block": node => {
-        const { title, image, excerpt, slug } = node.data.target.fields
+        const { title, image, excerpt, slug, tags } = node.data.target.fields
 
         return (
           <div className={styles.relatedPost}>
             <hr />
             <h3 className={styles.relatedPostLike}>También te puede gustar:</h3>
-            <Link to={`/blog/${slug["en-US"]}`}>
+            <Link to={`/post/${slug["en-US"]}`}>
               <div className={styles.relatedPostColumn}>
                 <img
                   width="400"
@@ -52,13 +52,16 @@ const postTemplate = ({
                 <h3 className={styles.relatedPostTitle}>{title["en-US"]}</h3>
                 <p className={styles.relatedPostExcerpt}>{excerpt["en-US"]}</p>
                 <div className={styles.relatedPostTags}>
-                  {/*tags["en-US"].map(tag => {
+                  {tags["en-US"].map(tag => {
                     return (
-                      <button className={`btn btn-sm btn-outline-${tag.color}`}>
-                        {tag.name}
+                      <button
+                        key={tag.fields.name["en-US"]}
+                        className={`btn btn-sm mr-1 btn-outline-${tag.fields.color["en-US"]}`}
+                      >
+                        {tag.fields.name["en-US"]}
                       </button>
                     )
-                  })*/}
+                  })}
                 </div>
               </div>
             </Link>
@@ -70,24 +73,30 @@ const postTemplate = ({
   return (
     <Layout>
       <Container>
-        {/* TAGS CONTAINER */}
-        <div className={styles.tagsContainer}>
-          {tags.map(tag => {
-            return (
-              <button className={`btn btn-sm ml-1 btn-outline-${tag.color}`}>
-                {tag.name}
-              </button>
-            )
-          })}
-        </div>
-
         <Image fluid={fluid} alt={title} className={styles.image} />
 
         <h1 className={styles.title}>{title}</h1>
         <p className={styles.meta}>
-          {moment(createdAt).locale("es").format("LL")}
+          {/* META - DATE */}
+          <p className={styles.date}>
+            {moment(createdAt).locale("es").format("LL")}
+          </p>
+
+          {/* META - TAGS */}
+          <div className={styles.tagsContainer}>
+            {tags.map(tag => {
+              return (
+                <button
+                  key={tag.name}
+                  className={`btn btn-sm ml-1 btn-outline-${tag.color}`}
+                >
+                  {tag.name}
+                </button>
+              )
+            })}
+          </div>
         </p>
-        <article className={styles.relatedPost}>
+        <article className={styles.post}>
           {documentToReactComponents(json, options)}
         </article>
       </Container>

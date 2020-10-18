@@ -8,7 +8,7 @@ import "./header.css"
 const Header = ({ hero }) => {
   return (
     <header>
-      <div class="inner-header flex">
+      <div className="inner-header flex">
         <Topbar />
         <Navigationbar />
         <Hero>{hero}</Hero>

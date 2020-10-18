@@ -1,7 +1,4 @@
 .tags-container {
-  position: absolute;
-  top: 0;
-  right: 0;
 }
 
 .image {
@@ -20,7 +17,7 @@
 }
 
 .post {
-  margin-top: 3rem;
+  margin-top: 0rem;
 }
 
 .related-post {
