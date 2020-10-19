@@ -64,5 +64,15 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Joan Busquet`,
+        short_name: `Joan Busquet`,
+        start_url: `/`,
+        display: `standalone`,
+        icon: `src/assets/images/favicon.png`,
+      },
+    },
   ],
 }
