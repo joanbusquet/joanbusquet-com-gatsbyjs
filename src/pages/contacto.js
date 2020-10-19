@@ -1,6 +1,7 @@
 import React from "react"
 import Layout from "../components/layout/Layout"
 import { Container, Row, Col, Form, Button } from "react-bootstrap"
+
 const contacto = () => {
   return (
     <Layout>
@@ -18,10 +19,19 @@ const contacto = () => {
               name="contact"
               method="POST"
               data-netlify="true"
+              netlify-honeypot="bot-field"
               onSubmit="submit"
+              action="/gracias"
             >
+              <p class="d-none">
+                <Form.Group controlId="formBot">
+                  <Form.Label>Don’t fill this out if you're human:</Form.Label>
+
+                  <Form.Control type="text" name="bot-field" />
+                </Form.Group>
+              </p>
               <input type="hidden" name="form-name" value="contact" />
-              <Form.Group controlId="formBasicEmail">
+              <Form.Group controlId="formName">
                 <Form.Label>Nombre completo *</Form.Label>
                 <Form.Control
                   required
@@ -31,7 +41,7 @@ const contacto = () => {
                 />
               </Form.Group>
 
-              <Form.Group controlId="formBasicPassword">
+              <Form.Group controlId="formEmail">
                 <Form.Label>Email *</Form.Label>
                 <Form.Control
                   required
@@ -40,7 +50,7 @@ const contacto = () => {
                   placeholder="Introduce tu email"
                 />
               </Form.Group>
-              <Form.Group controlId="formBasicEmail">
+              <Form.Group controlId="formPhone">
                 <Form.Label>Teléfono</Form.Label>
                 <Form.Control
                   type="text"
@@ -48,7 +58,7 @@ const contacto = () => {
                   placeholder="Introduce tu teléfono (opcional)"
                 />
               </Form.Group>
-              <Form.Group controlId="formBasicEmail">
+              <Form.Group controlId="formSubject">
                 <Form.Label>Asunto *</Form.Label>
                 <Form.Control
                   required
@@ -57,7 +67,7 @@ const contacto = () => {
                   placeholder="Introduce el motivo"
                 />
               </Form.Group>
-              <Form.Group controlId="exampleForm.ControlTextarea1">
+              <Form.Group controlId="formMessage">
                 <Form.Label>Mensaje *</Form.Label>
                 <Form.Control as="textarea" rows="3" name="message" required />
               </Form.Group>
@@ -78,6 +88,7 @@ const contacto = () => {
                   </a>
                 </Form.Label>
               </Form.Group>
+
               <Button
                 variant="primary"
                 type="submit"
