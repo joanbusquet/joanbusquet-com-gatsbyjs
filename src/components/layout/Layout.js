@@ -11,9 +11,11 @@ const Layout = ({ children, hero }) => {
   //TODO: Control sidebar
   return (
     <>
-      <Header hero={hero} />
-      <main>{children}</main>
-      <Footer />
+      <div className="site">
+        <Header hero={hero} />
+        <main className="site-content">{children}</main>
+        <Footer />
+      </div>
     </>
   )
 }
