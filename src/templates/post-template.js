@@ -54,12 +54,14 @@ const postTemplate = ({
                 <div className={styles.relatedPostTags}>
                   {tags["en-US"].map(tag => {
                     return (
-                      <button
-                        key={tag.fields.name["en-US"]}
-                        className={`btn btn-sm mr-1 btn-outline-${tag.fields.color["en-US"]}`}
-                      >
-                        {tag.fields.name["en-US"]}
-                      </button>
+                      <Link to={`/${tag.fields.slug["en-US"]}`}>
+                        <button
+                          key={tag.fields.id}
+                          className={`btn btn-sm mr-1 btn-outline-${tag.fields.color["en-US"]}`}
+                        >
+                          {tag.fields.name["en-US"]}
+                        </button>
+                      </Link>
                     )
                   })}
                 </div>
@@ -86,12 +88,14 @@ const postTemplate = ({
           <div className={styles.tagsContainer}>
             {tags.map(tag => {
               return (
-                <button
-                  key={tag.name}
-                  className={`btn btn-sm ml-1 btn-outline-${tag.color}`}
-                >
-                  {tag.name}
-                </button>
+                <Link to={`/${tag.slug}`}>
+                  <button
+                    key={tag.id}
+                    className={`btn btn-sm ml-1 btn-outline-${tag.color}`}
+                  >
+                    {tag.name}
+                  </button>
+                </Link>
               )
             })}
           </div>
@@ -117,8 +121,10 @@ export const query = graphql`
         }
       }
       tags {
+        id
         name
         color
+        slug
       }
       text {
         json

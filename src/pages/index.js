@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/layout/Layout"
 import { Container } from "react-bootstrap"
 
@@ -8,7 +9,11 @@ import VideoList from "../components/videos/VideoList"
 //import Podcast from "../components/podcast/Podcast"
 import PostList from "../components/posts/PostList"
 
-export default function Home({ data }) {
+export default function Home({
+  data: {
+    posts: { nodes: posts },
+  },
+}) {
   return (
     <Layout hero={<Hero />}>
       {/* VIDEOS BLOCK */}
@@ -37,8 +42,34 @@ export default function Home({ data }) {
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
           elementum ornare massa non rutrum.
         </p>
-        <PostList />
+        <PostList posts={posts} />
       </Container>
     </Layout>
   )
 }
+
+//POSTS QUERY
+export const query = graphql`
+  query GetPosts {
+    posts: allContentfulPost {
+      nodes {
+        id
+        title
+        slug
+        excerpt {
+          excerpt
+        }
+        tags {
+          name
+          color
+          slug
+        }
+        image {
+          fluid {
+            ...GatsbyContentfulFluid
+          }
+        }
+      }
+    }
+  }
+`

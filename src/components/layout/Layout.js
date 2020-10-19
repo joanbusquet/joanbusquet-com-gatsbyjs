@@ -7,7 +7,6 @@ import Header from "./header"
 import Footer from "./footer"
 
 const Layout = ({ children, hero }) => {
-  console.log(hero)
   //TODO: Control sidebar
   return (
     <>

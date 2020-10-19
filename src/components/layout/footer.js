@@ -22,8 +22,8 @@ const Footer = () => {
       <Image fixed={logo.childImageSharp.fixed} className={styles.logo} />
       <div className={styles.copyright}>
         &copy; Joan Busquet. Todos los derechos reservados |{" "}
-        <Link to="aviso-legal">Aviso legal</Link> |{" "}
-        <Link to="politica-privacidad">Politica de privacidad</Link>
+        <Link to="/aviso-legal">Aviso legal</Link> |{" "}
+        <Link to="/politica-privacidad">Politica de privacidad</Link>
       </div>
     </footer>
   )

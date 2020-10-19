@@ -1,18 +1,25 @@
 import React from "react"
-//import Layout from "../components/layout/Layout"
-//import Image from "gatsby-image"
+import Layout from "../components/layout/Layout"
+import PostList from "../components/posts/PostList"
+import { Container } from "react-bootstrap"
 
 const postsTagTemplate = ({
   data: {
-    posts: { nodes: postsList },
+    posts: { nodes: posts },
+    tag: { name: tagName },
   },
 }) => {
   return (
-    <div>
-      {postsList.map(post => {
-        return <div>{post.title}</div>
-      })}
-    </div>
+    <Layout>
+      <Container className="page-block-container">
+        <h2 className="page-block-title">{tagName}</h2>
+        <p className="page-block-subtitle">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque
+          elementum ornare massa non rutrum.
+        </p>
+        <PostList posts={posts} />
+      </Container>
+    </Layout>
   )
 }
 
@@ -33,6 +40,7 @@ export const query = graphql`
         tags {
           name
           color
+          slug
         }
         image {
           fluid {
@@ -40,6 +48,9 @@ export const query = graphql`
           }
         }
       }
+    }
+    tag: contentfulTag(slug: { eq: $slug }) {
+      name
     }
   }
 `

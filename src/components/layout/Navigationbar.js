@@ -43,9 +43,7 @@ const Navigationbar = () => {
             <Nav className={styles.navItem}>
               <Link to="/videos">Vídeos</Link>
             </Nav>
-            {/*<Nav className={styles.navItem}>
-              <Link to="/podcast">Podcast</Link>
-  </Nav>*/}
+
             <Nav className={styles.navItem}>
               <Link to="/blog">Blog</Link>
             </Nav>

@@ -30,7 +30,7 @@ exports.createPages = async ({ graphql, actions }) => {
   //POSTS BY TAG PAGE
   result.data.tags.nodes.forEach(tag => {
     createPage({
-      path: `/posts/${tag.slug}`,
+      path: `/${tag.slug}`,
       component: path.resolve(`src/templates/posts-tag-template.js`),
       context: { slug: tag.slug },
     })

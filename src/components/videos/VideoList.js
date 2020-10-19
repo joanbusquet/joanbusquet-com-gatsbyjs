@@ -8,6 +8,7 @@ const VideoList = () => {
     {
       allContentfulVideo {
         nodes {
+          id
           title
           link
           uploaded
@@ -18,7 +19,7 @@ const VideoList = () => {
   const {
     allContentfulVideo: { nodes: videos },
   } = data
-  console.log(videos)
+
   return (
     <>
       <Row>
@@ -34,9 +35,9 @@ const VideoList = () => {
                 width="100%"
                 height="200"
                 src={`https://www.youtube.com/embed/${video.link}`}
-                frameborder="0"
+                frameBorder="0"
                 allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen
+                allowFullScreen
               ></iframe>
               <h3 className={styles.videoTitle}>{video.title}</h3>
             </Col>
