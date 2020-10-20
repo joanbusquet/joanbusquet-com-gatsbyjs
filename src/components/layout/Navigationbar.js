@@ -33,11 +33,12 @@ const Navigationbar = () => {
           <Nav className={`ml-auto ${styles.nav}`}>
             <Nav className={styles.navItem}>
               <a
-                target="_blank"
-                href="https://aprendeinternet.com"
+                //target="_blank"
+                //href="https://aprendeinternet.com"
+                href="/"
                 rel="noreferrer"
               >
-                Academia
+                Cursos (próximamente)
               </a>
             </Nav>
             <Nav className={styles.navItem}>
