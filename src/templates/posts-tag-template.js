@@ -1,4 +1,5 @@
 import React from "react"
+import { graphql } from "gatsby"
 import Layout from "../components/layout/Layout"
 import PostList from "../components/posts/PostList"
 import { Container } from "react-bootstrap"
@@ -34,6 +35,7 @@ export const query = graphql`
       nodes {
         title
         slug
+        videoLink
         excerpt {
           excerpt
         }

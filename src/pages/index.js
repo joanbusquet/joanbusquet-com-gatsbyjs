@@ -5,7 +5,7 @@ import { Container } from "react-bootstrap"
 
 //Page components import
 import Hero from "../components/index/Hero"
-import VideoList from "../components/videos/VideoList"
+//import VideoList from "../components/videos/VideoList"
 //import Podcast from "../components/podcast/Podcast"
 import PostList from "../components/posts/PostList"
 
@@ -16,7 +16,7 @@ export default function Home({
 }) {
   return (
     <Layout hero={<Hero />}>
-      {/* VIDEOS BLOCK */}
+      {/* VIDEOS BLOCK 
       <Container className="page-block-container">
         <h2 className="page-block-title">Vídeos para tí</h2>
         <p className="page-block-subtitle">
@@ -26,7 +26,7 @@ export default function Home({
 
         <VideoList />
       </Container>
-      {/* PODCAST BLOCK 
+      PODCAST BLOCK 
       <Container className="page-block-container">
         <h2 className="page-block-title">Los últimos podcast</h2>
         <p className="page-block-subtitle">
@@ -48,14 +48,15 @@ export default function Home({
   )
 }
 
-//POSTS QUERY
+//RECENT POSTS QUERY
 export const query = graphql`
-  query GetPosts {
-    posts: allContentfulPost {
+  query GetRecentPosts {
+    posts: allContentfulPost(limit: 6) {
       nodes {
         id
         title
         slug
+        videoLink
         excerpt {
           excerpt
         }

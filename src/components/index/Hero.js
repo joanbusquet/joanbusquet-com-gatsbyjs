@@ -8,7 +8,7 @@ import { Container, Row, Col } from "react-bootstrap"
 const Hero = () => {
   const data = useStaticQuery(graphql`
     {
-      avatar: file(relativePath: { eq: "images/avatar.jpg" }) {
+      avatar: file(relativePath: { eq: "images/avatar.png" }) {
         childImageSharp {
           fixed(width: 300, quality: 100) {
             ...GatsbyImageSharpFixed_tracedSVG
