@@ -11,15 +11,6 @@ module.exports = {
     siteUrl: `https://www.joanbusquet.com`,
   },
   plugins: [
-    {
-      resolve: `gatsby-plugin-google-fonts`,
-      options: {
-        fonts: [
-          `rubik\:300,400,500,600,700,800`, // you can also specify font weights and styles
-        ],
-        display: "swap",
-      },
-    },
     `gatsby-plugin-react-helmet`,
     {
       resolve: `gatsby-source-filesystem`,
