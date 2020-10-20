@@ -7,7 +7,9 @@ const sobreMi = () => {
     <Layout>
       <Container>
         <Row>
-          <Col>sobre mi</Col>
+          <Col>
+            <h1 className="text-center">¡Pronto sabrás sobre mi!</h1>
+          </Col>
         </Row>
       </Container>
     </Layout>

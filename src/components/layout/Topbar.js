@@ -29,7 +29,7 @@ const Topbar = () => {
         {tags.map(tag => {
           return (
             <Nav.Item className={styles.topItem} key={tag.id}>
-              <Nav>
+              <Nav className={styles.nav}>
                 <Link to={`/${tag.slug}`}>{tag.name}</Link>
               </Nav>
             </Nav.Item>

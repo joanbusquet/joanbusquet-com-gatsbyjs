@@ -10,8 +10,8 @@ const Hero = () => {
     {
       avatar: file(relativePath: { eq: "images/avatar.png" }) {
         childImageSharp {
-          fixed(width: 300, quality: 100) {
-            ...GatsbyImageSharpFixed_tracedSVG
+          fluid(quality: 100) {
+            ...GatsbyImageSharpFluid_tracedSVG
           }
         }
       }
@@ -23,7 +23,7 @@ const Hero = () => {
       <Row>
         <Col sm={4}>
           <Image
-            fixed={avatar.childImageSharp.fixed}
+            fluid={avatar.childImageSharp.fluid}
             className={styles.avatar}
           />
         </Col>
