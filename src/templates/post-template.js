@@ -142,7 +142,7 @@ export const query = graphql`
       title
       image {
         fluid {
-          ...GatsbyImageSharpFluid_withWebp_tracedSVG
+          ...GatsbyContentfulFluid_withWebp_noBase64
         }
       }
       videoLink

@@ -11,7 +11,7 @@ const Hero = () => {
       avatar: file(relativePath: { eq: "images/avatar.png" }) {
         childImageSharp {
           fluid(quality: 100) {
-            ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            ...GatsbyImageSharpFluid_withWebp_tracedSVG
           }
         }
       }
