@@ -7,13 +7,12 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title:
-      "Joan Busquet - Desarrollo web, productividad, emprendimiento y libros",
+    title: "Desarrollo web, productividad, emprendimiento",
     titleTemplate: "%s · Joan Busquet",
     description:
-      "Joan Busquet. Hablemos de desarrollo web, productividad, Tecnología y Apps, Emprendimiento, Dinero, Libros y mucho más.",
-    url: "https://joanbusquet.com", // No trailing slash allowed!
-    image: "/assets/images/avatar.png", // Path to your image you placed in the 'static' folder
+      "Hablemos de desarrollo web, productividad, emprendimiento y mucho más.",
+    siteUrl: "https://joanbusquet.com", // No trailing slash allowed!
+    image: "/images/avatar.png", // Path to your image you placed in the 'static' folder
     twitterUsername: "@joanbusquet",
   },
   plugins: [
@@ -33,7 +32,12 @@ module.exports = {
         trackingId: `UA-158913458-1`,
       },
     },
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: "gatsby-plugin-sitemap",
+      options: {
+        exclude: ["/gracias"],
+      },
+    },
     {
       resolve: "gatsby-plugin-react-svg",
       options: {
