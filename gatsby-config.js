@@ -7,8 +7,14 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    title: `Joan Busquet`,
-    siteUrl: `https://www.joanbusquet.com`,
+    title:
+      "Joan Busquet - Desarrollo web, productividad, emprendimiento y libros",
+    titleTemplate: "%s · Joan Busquet",
+    description:
+      "Joan Busquet. Hablemos de desarrollo web, productividad, Tecnología y Apps, Emprendimiento, Dinero, Libros y mucho más.",
+    url: "https://joanbusquet.com", // No trailing slash allowed!
+    image: "/assets/images/avatar.png", // Path to your image you placed in the 'static' folder
+    twitterUsername: "@joanbusquet",
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -62,6 +68,12 @@ module.exports = {
         start_url: `/`,
         display: `standalone`,
         icon: `src/assets/images/favicon.png`,
+      },
+    },
+    {
+      resolve: `gatsby-plugin-offline`,
+      options: {
+        precachePages: [`/`, `/blog/`],
       },
     },
   ],

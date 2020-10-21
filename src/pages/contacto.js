@@ -1,10 +1,15 @@
 import React from "react"
 import Layout from "../components/layout/Layout"
 import { Container, Row, Col, Form, Button } from "react-bootstrap"
+import SEO from "../components/shared/seo"
 
 const contacto = () => {
   return (
     <Layout>
+      <SEO
+        title="Contacto"
+        description="¿Hablamos? Tienes alguna duda acerca de desarrollo web, productividad, Tecnología y Apps, Emprendimiento, Dinero, Libros y mucho más."
+      />
       <Container className="page-block-container">
         <h2 className="page-block-title">¿Hablamos?</h2>
         <p className="page-block-subtitle">

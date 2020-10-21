@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout/Layout"
 import PostList from "../components/posts/PostList"
 import { Container } from "react-bootstrap"
+import SEO from "../components/shared/seo"
 
 const videos = ({
   data: {
@@ -11,6 +12,10 @@ const videos = ({
 }) => {
   return (
     <Layout>
+      <SEO
+        title="Videos"
+        description="Videos acerca de desarrollo web, productividad, Tecnología y Apps, Emprendimiento, Dinero, Libros y mucho más."
+      />
       <Container className="page-block-container">
         <h2 className="page-block-title">Videos</h2>
         <p className="page-block-subtitle">

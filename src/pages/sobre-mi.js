@@ -1,10 +1,15 @@
 import React from "react"
 import Layout from "../components/layout/Layout"
 import { Container, Row, Col } from "react-bootstrap"
+import SEO from "../components/shared/seo"
 
 const sobreMi = () => {
   return (
     <Layout>
+      <SEO
+        title="Sobre mi"
+        description="Sobre mi. Desarrollo web, productividad, Tecnología y Apps, Emprendimiento, Dinero, Libros y mucho más."
+      />
       <Container>
         <Row>
           <Col>
