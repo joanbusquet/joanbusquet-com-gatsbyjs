@@ -48,7 +48,7 @@ export const query = graphql`
         }
         image {
           fluid {
-            ...GatsbyContentfulFluid_withWebp_noBase64
+            ...GatsbyContentfulFluid_withWebp
           }
         }
       }

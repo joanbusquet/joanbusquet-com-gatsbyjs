@@ -12,7 +12,7 @@ const PostList = ({ posts }) => {
       play: file(relativePath: { eq: "images/play.png" }) {
         childImageSharp {
           fixed(width: 100) {
-            ...GatsbyImageSharpFixed_withWebp_tracedSVG
+            ...GatsbyImageSharpFixed_withWebp
           }
         }
       }
